@@ -1,7 +1,7 @@
 if status is-interactive
     test -z "$autovenv_announce"
         and set -g autovenv_announce "yes"
-    test -z "$autovenv"
+    test -z "$autovenv_enable"
         and set -g autovenv_enable "yes"
 
     function autovenv --on-variable PWD -d "Automatic activation of Python virtual enviroments"
