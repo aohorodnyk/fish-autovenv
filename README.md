@@ -21,3 +21,8 @@ when entering/leaving/changing venvs.
 
 ## License
 [MIT][mit] © [Timothy Brown][author]
+
+[author]: https://github.com/timothybrown
+[license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[mit]: http://opensource.org/licenses/MIT
+[omf]: https://github.com/oh-my-fish/oh-my-fish
