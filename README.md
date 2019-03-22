@@ -14,10 +14,13 @@ Upon entering a directory that contains a Python venv the plugin will automatica
 Likewise, when leaving a venv directory the plugin will automatically deactivate it for you. The plugin
 also handles cases where you move directly from one venv directory to another.
 
-The only setting is a variable called `autovenv_announce` that controls whether or not a message is printed
-when entering/leaving/changing venvs.
+The only settings are stored in two variables called `autovenv_enable` and `autovenv_announce`.
+
+    set -U autovenv_enable 1|0
+Enables/disables autovenv functionality.
 
     set -U autovenv_announce 1|0
+Controls whether or not a message is printed when entering/leaving/changing venvs.
 
 ## License
 [MIT][mit] © [Timothy Brown][author]
