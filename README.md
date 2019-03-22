@@ -11,8 +11,8 @@ Installation with [Oh My Fish][omf]:
 
 ## About
 Do you like the way Pyenv automatically switches between enviroments when you change directories and wish
-you could do the same thing with standard Python 3 venvs? Well, now you can! Introducing: AutoVenv
-No complicated scripts, binaries or overhead needed; AutoVenv is a single file, pure `fish` solution.
+you could do the same thing with standard Python 3 venvs? Well, now you can! No complicated scripts,
+binaries or overhead needed; AutoVenv is a single file, pure `fish` solution.
 
 ## Usage
 Upon entering a directory that contains a Python venv (or any directory *above* it) AutoVenv will automatically
