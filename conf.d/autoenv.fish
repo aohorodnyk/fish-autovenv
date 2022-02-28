@@ -9,12 +9,6 @@ if status is-interactive
         and set -g autovenv_enable "yes"
 end
 
-if test -n "$autovenv_dir"
-    set -g autovenv_dir_slash "$autovenv_dir/"
-else
-    set -g autovenv_dir_slash ""
-end
-
 ## AutoVenv Function
 # Activates on directory changes.
 function autovenv --on-variable PWD -d "Automatic activation of Python virtual environments"
@@ -31,8 +25,12 @@ function autovenv --on-variable PWD -d "Automatic activation of Python virtual e
     # instead of just checking the CWD to handle cases where the user moves into a sub-directory of the venv.
     for _dir in (string split -n '/' "$PWD")
         set -l _tree "$_tree/$_dir"
-        if test -e "$_tree/{$autovenv_dir_slash}bin/activate.fish"
-            set _source "$_tree/{$autovenv_dir_slash}bin/activate.fish"
+
+        set -l _activate (string join '/' "$_tree" "$autovenv_dir" "bin/activate.fish")
+        set -l _activate (string replace -a "//" "/" "$_activate")
+
+        if test -e "$_activate"
+            set _source "$_activate"
             if test "$autovenv_announce" = "yes"
                 set -g __autovenv_old $__autovenv_new
                 set -g __autovenv_new (basename $_tree)

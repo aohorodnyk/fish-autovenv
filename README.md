@@ -1,13 +1,20 @@
 #### AutoVenv
-[Oh My Fish][omf] plugin to automatically activate/deactivate Python virtual enviroments upon entering/leaving a directory.
+[Fisher][fisher] plugin to automatically activate/deactivate Python virtual enviroments upon entering/leaving a directory.
 
 [![MIT License][license-badge]](/LICENSE)
 </br>
 
-## Install
-Installation with [Oh My Fish][omf]:
+## Why forked?
+This project was forked from [autovenv by timothybrown](https://github.com/timothybrown/fish-autovenv), which has not been updated for more than three years.
 
-    omf install autovenv
+The project was forked because I wanted to add a few features and improve the plugin:
+* The plugin did not work with the new version of fish, and I wanted to keep it as simple as possible.
+* The plugin looked for virtual environments in the current directory, but not in the specified sub-directory. For example I store virtual env in a sub-directory called `.venv`.
+
+## Install
+Installation with [Fisher][fisher]:
+
+    fisher install aohorodnyk/fish-autovenv
 
 ## About
 Do you like the way Pyenv automatically switches between enviroments when you change directories and wish
@@ -26,10 +33,16 @@ Enables/disables autovenv functionality.
     set -U autovenv_announce yes|no
 Controls whether or not a message is printed when entering/leaving/changing venvs.
 
+    set -U autovenv_dir .venv
+Set a directory or path to a directory that contains Python virtual environments. If empty, the current directory is used.
+
+
 ## License
 [MIT][mit] © [Timothy Brown][author]
+[MIT][mit] © [Anton Ohorodnyk][author2]
 
 [author]: https://github.com/timothybrown
+[author2]: https://github.com/aohorodnyk
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 [mit]: http://opensource.org/licenses/MIT
-[omf]: https://github.com/oh-my-fish/oh-my-fish
+[fisher]: https://github.com/jorgebucaran/fisher
