@@ -40,6 +40,7 @@ Set a directory or path to a directory that contains Python virtual environments
 
 ## License
 [MIT][mit] © [Timothy Brown][author]
+
 [MIT][mit] © [Anton Ohorodnyk][author2]
 
 [author]: https://github.com/timothybrown
