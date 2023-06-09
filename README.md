@@ -11,6 +11,7 @@ The project was forked because I wanted to add a few features and improve the pl
 * The plugin did not work with the new version of fish, and I wanted to keep it as simple as possible.
 * The plugin looked for virtual environments in the current directory, but not in the specified sub-directory. For example I store virtual env in a sub-directory called `.venv`.
 * Apply virtual environment when run a terminal in a directory with a custom virtual environment.
+* Search for virtual environments in the parent directories from bottom to top, instead of top to bottom it was implemented in the original plugin.
 
 ## Install
 Installation with [Fisher][fisher]:
