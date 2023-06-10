@@ -4,6 +4,8 @@ if status is-interactive
   and set -g autovenv_announce "yes"
   test -z "$autovenv_enable"
   and set -g autovenv_enable "yes"
+  test -z "$autovenv_dir"
+  and set -g autovenv_dir ".venv"
 end
 
 # Apply autovenv settings.
