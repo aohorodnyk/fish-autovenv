@@ -66,13 +66,17 @@ function applyAutoenv
   end
 end
 
-# We need to run AutoVenv on the initialization of each session.
-if status is-interactive
+# Activates AutoVenv based on directory changes.
+function autovenv --on-variable PWD -d "Automatic activation of Python virtual environments"
   applyAutoenv
 end
 
-## AutoVenv Function.
-# Activates on directory changes.
-function autovenv --on-variable PWD -d "Automatic activation of Python virtual environments"
-  applyAutoenv
+set --global _autovenv_initialized 0
+
+# Activates AutoVenv on initialization of the session after sourcing config.fish.
+function __autovenv_on_prompt --on-event fish_prompt
+  if test "$_autovenv_initialized" = "0"
+    set --global _autovenv_initialized 1
+    applyAutoenv
+  end
 end
