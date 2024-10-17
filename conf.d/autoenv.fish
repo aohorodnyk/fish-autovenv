@@ -38,7 +38,7 @@ function applyAutoenv
     set _tree (dirname $_tree)
   end
   # If we're *not* in an active venv and the venv source dir exists we activate it and return.
-  if test -z "$VIRTUAL_ENV" -a -e "$_source"
+  if test -z "$VIRTUAL_ENV" -a -e "$_source"; or test "$_autovenv_initialized" = "0"
     source "$_source"
     if test "$autovenv_announce" = "yes"
       echo "Activated Virtual Environment ($__autovenv_new)"
@@ -76,7 +76,7 @@ set --global _autovenv_initialized 0
 # Activates AutoVenv on initialization of the session after sourcing config.fish.
 function __autovenv_on_prompt --on-event fish_prompt
   if test "$_autovenv_initialized" = "0"
-    set --global _autovenv_initialized 1
     applyAutoenv
+    set --global _autovenv_initialized 1
   end
 end
