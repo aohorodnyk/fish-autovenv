@@ -38,7 +38,7 @@ function applyAutoenv
     set _tree (dirname $_tree)
   end
   # If we're *not* in an active venv and the venv source dir exists we activate it and return.
-  if test -z "$VIRTUAL_ENV" -a -e "$_source"; or test "$_autovenv_initialized" = "0"
+  if test \( -z "$VIRTUAL_ENV" -o "$_autovenv_initialized" = "0" \) -a -e "$_source"
     source "$_source"
     if test "$autovenv_announce" = "yes"
       echo "Activated Virtual Environment ($__autovenv_new)"
