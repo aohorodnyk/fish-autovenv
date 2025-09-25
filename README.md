@@ -1,3 +1,5 @@
+**Deprecated in favor of [uv](https://github.com/astral-sh/uv)**
+
 #### AutoVenv
 [Fisher][fisher] plugin to automatically activate/deactivate Python virtual enviroments upon entering/leaving a directory.
 
